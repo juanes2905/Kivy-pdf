@@ -27,7 +27,8 @@ class SwipeToDeleteItem(MDCardSwipe):
     text = StringProperty()
 
 class Tarea(MDApp):
-    logging.info("SALUDOS")
+    logging.info("PRUEBA DE COMMIT")
+    logging.info("SI SUBI EL COMMIT")
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.dialog = None
