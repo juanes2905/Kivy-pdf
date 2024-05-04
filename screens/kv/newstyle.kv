@@ -1,0 +1,32 @@
+<SwipeToDeleteItem>:
+    size_hint_y: None
+    height: content.height
+    anchor: "left"
+    type_swipe: "hand"
+    MDCardSwipeLayerBox:
+        padding: "8dp"
+
+        MDIconButton:
+            icon: "keyboard-tab"
+            pos_hint: {"center_y": .5}
+            on_release: app.listaView(root.text)
+
+    MDCardSwipeFrontBox:
+
+        OneLineListItem:
+            id: content
+            elevation: 0
+            text: root.text
+            _no_ripple_effect: True
+
+MDScreen:
+    name: 'newview'
+    MDBoxLayout:
+        orientation: "vertical"
+
+        MDScrollView:
+            scroll_timeout : 5
+
+            MDList:
+                id: md_list
+                padding: 0

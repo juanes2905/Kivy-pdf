@@ -1,0 +1,61 @@
+MDScreen:
+    name: 'data'
+    MDBoxLayout:
+        orientation: "vertical"
+        spacing: "20dp"
+        adaptive_height: True
+        size_hint_x: .8
+        pos_hint: {"center_x": .5, "center_y": .8}
+        MDLabel:
+            text: 'BUSCAR USUARIO'
+            theme_text_color: "Custom"
+            font_size: "15sp"
+            text_color: app.theme_cls.primary_color
+        MDTextField:
+            id: busUsers
+            icon_right: "search"
+            hint_text: "Buscar usuario"
+            text_color_focus: "black"
+            hint_text_color_focus: "black"
+            write_tab: False
+            multiline: False 
+            on_text: self.text = self.text.replace(" ", "")
+        MDRaisedButton:
+            text: "       Buscar        "
+            pos_hint: {'center_x': 0.5}
+            text_color: "white"
+            elevation: 0
+            on_release: app.buscarUsuarios()
+    MDBoxLayout:
+        orientation: "vertical"
+        spacing: "20dp"
+        #adaptive_height: True
+        size_hint_x: .8
+        pos_hint: {"center_x": .5, "center_y": .7}
+        MDTextField:
+            id: usuario
+            hint_text: "Usuario"
+            disabled: 'True'
+        MDTextField:
+            id: busEmail
+            hint_text: "Correo"
+            disabled: 'True'
+        MDTextField:
+            id: busPassword
+            hint_text: "Contraseña"
+            disabled: 'True'
+            password: True
+
+    MDSpinner:
+        id: Spin
+        active: False
+        size_hint: None ,None 
+        size: "30dp", "30dp"
+        pos_hint: {"center_x":.5, "center_y": .10}
+
+    MDRaisedButton:
+        text: "Descargar Usuario en PDF"
+        size_hint: None, None
+        size: "200dp", "48dp"
+        pos_hint: {"center_x": 0.5}
+        on_release: app.descargarUsuarioPDF()

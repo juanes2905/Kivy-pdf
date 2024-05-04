@@ -1,0 +1,47 @@
+MDScreen:
+    name: 'InsertU'
+    MDBoxLayout:
+        orientation: "vertical"
+        spacing: "20dp"
+        adaptive_height: True
+        size_hint_x: .8
+        pos_hint: {"center_x": .5, "center_y": .5}
+        MDLabel:
+            text: 'Crea un nuevo usuario'
+            theme_text_color: "Custom"
+            font_size: "15sp"
+            text_color: app.theme_cls.primary_color
+        MDTextField:
+            id: InsertEmail
+            icon_right: "email"
+            hint_text: "Ingrese el correo"
+            text_color_focus: "black"
+            hint_text_color_focus: "black"
+            write_tab: False
+            multiline: False 
+            on_text: self.text = self.text.replace(" ", "")
+        MDTextField:
+            id: InsertUsername
+            icon_right: "account"
+            hint_text: "Ingrese un usuario"
+            text_color_focus: "black"
+            hint_text_color_focus: "black"
+            write_tab: False
+            multiline: False 
+            on_text: self.text = self.text.replace(" ", "")
+        MDTextField:
+            id: InsertPassword
+            icon_right: "lock"
+            hint_text: "Ingrese su contraseña"
+            text_color_focus: "black"
+            hint_text_color_focus: "black"
+            write_tab: False
+            multiline: False 
+            on_text: self.text = self.text.replace(" ", "")
+            password: True
+        MDRaisedButton:
+            text: "       Crear        "
+            pos_hint: {'center_x': 0.5}
+            text_color: "white"
+            elevation: 0
+            on_release: app.InsersPruebas()

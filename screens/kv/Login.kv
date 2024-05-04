@@ -1,0 +1,62 @@
+<LoadingDialog>:
+    size_hint: None, None
+    size: "200dp", "200dp"
+    BoxLayout:
+        orientation: "vertical"
+        MDLabel:
+            text: "Cargando..."
+        MDProgressBar:
+            id: progress_bar
+            size_hint_y: None
+            height: "20dp"
+            indeterminate: True
+
+
+
+MDScreen:
+    name: "login"
+    MDBoxLayout:
+        orientation: "vertical"
+        spacing: "45dp"
+        padding: "30dp", "100dp", "30dp", "75dp"
+        MDTextField:
+            id: validaInp
+            icon_left: "account-edit"
+            mode: "round"
+            text_color_focus: "black"
+            icon_right_color_focus: "black"
+            hint_text_color_focus: "black"
+            normal_color: [0,0,0,.25]
+            active_color: [0,0,0,.25]
+            write_tab: False
+            multiline: False 
+            on_text: self.text = self.text.replace(" ", "")
+            hint_text: "Correo"
+        MDTextField:
+            id: inpPass
+            icon_left: "account-key"
+            mode: "round"
+            text_color_focus: "black"
+            icon_right_color_focus: "black"
+            hint_text_color_focus: "black"
+            normal_color: [0,0,0,.25]
+            active_color: [0,0,0,.25]
+            write_tab: False
+            multiline: False
+            on_text: self.text = self.text.replace(" ", "")
+            hint_text: "Contraseña"
+            password: True
+
+        MDRaisedButton:
+            text: "       Ingresar        "
+            size_hint: .3, None
+            text_color: "white"
+            pos_hint: {'center_x': .5, 'center_y': .5}
+            elevation: 0
+            on_release: app.ingresar()
+        MDSpinner:
+            id: spin
+            active: False
+            size_hint: None, None
+            size: "30dp", "30dp"
+            pos_hint: {"center_x":.5}
