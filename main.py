@@ -12,7 +12,8 @@ from kivymd.toast import toast
 from kivy.properties import StringProperty
 from screens.py.login import login
 from screens.py.users import inserUsers
-from screens.py.buscarUsuarios import buscarUsuario, descargarUsuarioPDF
+from screens.py.buscarUsuarios import buscarUsuario
+from screens.py.donwloadUser import descargarUsuarioPDF
 from kivy.uix.label import Label
 from kivymd.uix.spinner import MDSpinner
 from kivy.metrics import dp
@@ -27,8 +28,6 @@ class SwipeToDeleteItem(MDCardSwipe):
     text = StringProperty()
 
 class Tarea(MDApp):
-    logging.info("PRUEBA DE COMMIT")
-    logging.info("SI SUBI EL COMMIT")
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.dialog = None
